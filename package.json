@@ -1,0 +1,48 @@
+{
+  "name": "assemblygulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VolodymyrFihurniak/AssemblyGulp.git"
+  },
+  "keywords": [
+    "gulp",
+    "js",
+    "sass",
+    "pug",
+    "linters"
+  ],
+  "author": "Volodymyr Fihurniak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VolodymyrFihurniak/AssemblyGulp/issues"
+  },
+  "homepage": "https://github.com/VolodymyrFihurniak/AssemblyGulp#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.7",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/register": "^7.16.9",
+    "babel-preset-env": "^1.7.0",
+    "del": "^6.0.0",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "gulp": "^4.0.2"
+  }
+}
