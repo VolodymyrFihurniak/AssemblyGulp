@@ -1,2 +1,8 @@
 node_modules/
 dist/
+gulp/config/version.json
+src/html/
+src/img/
+src/scss/
+src/js/
+src/fonts/
