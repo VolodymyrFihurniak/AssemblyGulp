@@ -6,12 +6,18 @@ const srcFolder = './src';
 
 export default {
   build: {
+    html: `${buildFoler}/`,
+    img: `${buildFoler}/img/`,
     files: `${buildFoler}/`,
   },
   src: {
+    html: [`${srcFolder}/html/*.html`, `!${srcFolder}/html/_*.html`],
+    img: `${srcFolder}/img/**/*.{jpg,png,svg,ico,webp}`,
     files: `${srcFolder}/**/**/*.*`,
   },
   watch: {
+    html: `${srcFolder}/html/**/*.html`,
+    img: `${srcFolder}/img/**/*.{jpg,png,svg,ico,webp}`,
     files: `${srcFolder}/**/**/*.*`,
   },
   clean: buildFoler,
