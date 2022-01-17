@@ -12,8 +12,13 @@ export default function html() {
       }),
     ))
     .pipe(fileInclude())
-    .pipe(webpHtmlNoSvg())
-    .pipe(
+    .pipe(app.plugins.replace(/@img\//g, 'img/'))
+    .pipe(app.plugins.if(
+      app.isBuild,
+      webpHtmlNoSvg(),
+    ))
+    .pipe(app.plugins.if(
+      app.isBuild,
       versionNumber({
         value: '%DT%',
         append: {
@@ -28,7 +33,7 @@ export default function html() {
           file: 'gulp/config/version.json',
         },
       }),
-    )
+    ))
     .pipe(app.gulp.dest(app.path.build.html))
     .pipe(app.plugins.browsersync.stream());
 }

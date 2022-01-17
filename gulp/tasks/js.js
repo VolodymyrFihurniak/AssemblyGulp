@@ -2,7 +2,7 @@ import webpack from 'webpack-stream';
 
 /* eslint-disable no-undef */
 export default function js() {
-  return app.gulp.src(app.path.src.js, { sourcemaps: true })
+  return app.gulp.src(app.path.src.js, { sourcemaps: app.isDev })
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
         title: 'JS',
@@ -10,7 +10,7 @@ export default function js() {
       }),
     ))
     .pipe(webpack({
-      mode: 'development',
+      mode: app.isBuild ? 'production' : 'development',
       output: {
         filename: 'app.min.js',
       },
